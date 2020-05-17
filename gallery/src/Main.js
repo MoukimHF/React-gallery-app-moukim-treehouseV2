@@ -5,6 +5,8 @@ import axios from 'axios';
 import Load from './components/load.js';
 import Search from './components/Search';
 import Nav from './components/Nav';
+import propTypes from 'prop-types';
+import apiKey from './config';
 export default class Main extends Component {
 
   constructor() {
@@ -17,7 +19,7 @@ export default class Main extends Component {
   } 
   componentDidMount() {
 
-    this.performSearch(this.props.query);
+    this.performSearch(this.props.match.params.text);
     
     }
     componentWillReceiveProps(nextProps) {
@@ -30,7 +32,7 @@ export default class Main extends Component {
 
   performSearch = (query) =>{
     this.setState({ loading: true });
-    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=ee9bf3b2b3ab8908a677c28f54739cfa&text=${query}&per_page=24&sort=relevance&content_type=1&format=json&nojsoncallback=1`)
+    axios.get(`https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=${apiKey}&text=${query}&per_page=24&sort=relevance&content_type=1&format=json&nojsoncallback=1`)
     .then(response => {
       this.setState({
       photos: response.data.photos.photo,
@@ -61,4 +63,10 @@ console.log(this.props);
 )
 }
 
+
+
+
+}
+Main.propTypes={
+  query:propTypes.string.isRequired,
 }

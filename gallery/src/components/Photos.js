@@ -1,6 +1,7 @@
 import React from 'react';
 import Photo from './Photo';
 import NoPhotos from './NoPhotos'
+import propTypes from 'prop-types';
 
 const Photos = props => { 
 
@@ -25,5 +26,8 @@ const Photos = props => {
       </div>
     );
   }
-    
+  Photos.propTypes={
+    data:propTypes.array.isRequired,
+    query:propTypes.string.isRequired
+  }
 export default Photos;
