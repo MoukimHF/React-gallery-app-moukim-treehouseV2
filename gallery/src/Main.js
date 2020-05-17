@@ -22,11 +22,11 @@ export default class Main extends Component {
     this.performSearch(this.props.match.params.text);
     
     }
-    componentWillReceiveProps(nextProps) {
-      this.setState({ query: nextProps.query,
+    componentWillReceiveProps(nextProp) {
+      this.setState({ query: nextProp.match.params.text,
       loading:true
     });
-      this.performSearch(nextProps.query);
+      this.performSearch(nextProp.match.params.text);
     }
     
 
@@ -47,7 +47,6 @@ export default class Main extends Component {
 
 
 render() {
-console.log(this.props);
   return (
     <div className="container">
     <div className="photo-container">
@@ -68,5 +67,5 @@ console.log(this.props);
 
 }
 Main.propTypes={
-  query:propTypes.string.isRequired,
+  query:propTypes.string,
 }

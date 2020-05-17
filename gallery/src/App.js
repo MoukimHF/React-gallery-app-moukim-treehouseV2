@@ -17,10 +17,7 @@ import NotFound from './components/NotFound';
    
       <Switch>
   
-      <Route exact path="/"  render={ (props) => (<Main query={"cats"}  {...props} />) } />
-      <Route exact path="/search/cats" render={ (props) => (<Main query={"cats"}  {...props} />) } />
-      <Route exact path="/search/dogs" render={ (props) => (<Main query={"dogs"}  {...props}  />) } />
-      <Route exact path="/search/computers" render={ (props) => (<Main query={"computers"}  {...props}  />) } />
+      <Route exact path="/"  render={(props) => (<Redirect to="/search/cats"/>) } />
       <Route exact path="/search/:text" render={ (props) => (<Main  {...props}  />) } />
          <Route component={NotFound} />
       </Switch>
