@@ -1,4 +1,6 @@
 ##React Gallery App Project 7 TeamTreehouse By Moukim Hfaidh
+first of all please do cd gallery then npm install 
+and create a config.js file in the src directory put in it your api key and export it Then ...
 >>npm start serves the app 
 >> The main functionality of the app is working perfectly
 >>you can search for images either from the search form or from the url 
