@@ -6,7 +6,7 @@ import Load from './components/load.js';
 import Search from './components/Search';
 import Nav from './components/Nav';
 import propTypes from 'prop-types';
-import apiKey from './config';
+import apiKey from "ee9bf3b2b3ab8908a677c28f54739cfa";
 export default class Main extends Component {
 
   constructor() {
